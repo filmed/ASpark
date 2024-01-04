@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-//TO DO: 
-//Better moveSpeed calculating (now just ms = max or ms = 0)
+
 public class AgentMover : MonoBehaviour 
 {
     private Rigidbody2D rb;
@@ -63,18 +62,7 @@ public class AgentMover : MonoBehaviour
                
             }
 
-                /*  if (!isMoved)  //kinda works but cringe
-                  {
-                      int i = 0;
-                      do
-                      {
-                          moveSpeed = moveSpeed/1.5f;
-                          Debug.Log(moveSpeed);
-                          isMoved = TryMove(MovementInput);
-                          i++;
-                      } while ((!isMoved) && i < 3);
-                  }
-                  moveSpeed = maxSpeed;*/
+              
         }
         else 
         {
@@ -95,12 +83,7 @@ public class AgentMover : MonoBehaviour
                 rb.MovePosition(rb.position + toMove);
             }
 
-            /*if (castCollisions.Count ==  0) 
-            {
-                Debug.Log("slide with speed: " + currentSpeed);
-               
-                    rb.MovePosition(rb.position + currentSpeed * currentInput*Time.fixedDeltaTime);
-            }*/
+            
 
 
         }
@@ -121,11 +104,7 @@ public class AgentMover : MonoBehaviour
                 ) ;
             Debug.DrawRay(transform.position + new Vector3(circleCollider.offset.x, circleCollider.offset.y, 0), _direction * (currentSpeed * Time.fixedDeltaTime + collisionsOffset), Color.blue, 1f);
             
-/*
-            if (count > 0)
-            {
-                Debug.Log(count);
-            }*/
+
 
             if (count == 0)
             {
